@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  justify-content: center;
+}
+
+body {
+  background: #333333;
+  cursor: pointer;
+}
+
+@-webkit-keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+.flex-container {
+  -webkit-box-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+#dot {
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  -webkit-transition: border-top-width 0.5s ease, border-left-width 0.5s ease  0.25s, border-bottom-width 0.5s ease, border-right-width 0.5s ease 0.25s, border-color 1s ease 0.75s;
+  transition: border-top-width 0.5s ease, border-left-width 0.5s ease  0.25s, border-bottom-width 0.5s ease, border-right-width 0.5s ease 0.25s, border-color 1s ease 0.75s;
+}
+#dot.active {
+  -webkit-animation: animatedBackground 0.2s linear infinite;
+          animation: animatedBackground 0.2s linear infinite;
+  border-color: rgba(255, 255, 255, 0.8);
+  border-width: 1000px;
+  -webkit-transition: border-top-width 0.5s ease 0.5s, border-left-width 0.5s ease  0.75s, border-bottom-width 0.5s ease 0.5s, border-right-width 0.5s ease 0.75s, border-color 0.5s ease;
+  transition: border-top-width 0.5s ease 0.5s, border-left-width 0.5s ease  0.75s, border-bottom-width 0.5s ease 0.5s, border-right-width 0.5s ease 0.75s, border-color 0.5s ease;
+}
+
+
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter h1 {
+  justify-content: center;
+  color: rgb(0, 0, 0);
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid rgb(0, 0, 0); /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+.typewriter a {
+  color: rgb(22, 0, 102);}
+
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: rgb(0, 0, 0) }
+}
